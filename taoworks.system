@@ -1,0 +1,24 @@
+;;; -*- mode: Lisp; coding: utf-8  -*-
+
+(cl:in-package :defsystem)
+
+
+(setf (logical-pathname-translations "taoworks")
+      `(("**;*.*.*" ,(merge-pathnames (pathname "**/*.*") *load-pathname*))))
+
+
+(defsystem taoworks
+  (:default-host taoworks 
+   :default-type :lisp-file)
+  :members ("tao-mode"
+            "tao-fontlock"
+            "tao-indent"
+            "tao-file"))
+
+
+
+
+
+
+
+
