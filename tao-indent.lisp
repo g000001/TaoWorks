@@ -74,4 +74,7 @@
 (setup-tao-indent "send-mail" 0 3)
 (setup-tao-indent "receive-mail" 0 3)
 
+(setup-tao-indent "&" 0 3)
+(setup-tao-indent "!" 0 3)
+
 ;;; *EOF*

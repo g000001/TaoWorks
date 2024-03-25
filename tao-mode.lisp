@@ -52,7 +52,7 @@
   :syntax-table *tao-syntax-table*)
 
 
-(bind-key "Lisp Insert )" *close-bracket-char-object* :mode "Tao")
+;(bind-key "Lisp Insert )" *close-bracket-char-object* :mode "Tao")
 
 
 (defun setup-tao-mode (buffer)

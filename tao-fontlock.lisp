@@ -24,24 +24,36 @@
     "\\>")))
 
 
-(defmacro unless-defined (def name args &body body) 
+(unless-defined defmacro unless-defined (def name args &body body) 
   (unless (or (fboundp name) (special-operator-p name) (macro-function name))
     `(,def ,name ,args ,@body)))
 
+
 (unless-defined defun lisp-font-lock-mark-block-function (point other-point)
   (get-defun-start-and-end-points point point other-point))
+
 
 (setf (variable-value 'font-lock-fontify-syntactically-region-function
                       :mode "Tao")
       #'lisp-font-lock-fontify-syntactically-region)
 
+
 (setf (variable-value 'font-lock-fontify-keywords-region-function
                       :mode "Tao")
       #'lisp-font-lock-fontify-keywords-region)
+
 
 (setf (variable-value 'font-lock-mark-block-function
                       :mode "Tao")
       #'lisp-font-lock-mark-block-function)
 
+
+(setf (variable-value 'font-lock-fontify-by-default
+                      :mode "Tao")
+      T)
+
+
 (add-global-hook tao-mode-hook 'turn-on-font-lock)
 
+
+;;; *EOF*
